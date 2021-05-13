@@ -36,4 +36,10 @@ public class StartGame : MonoBehaviour
     void OpenCredits() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
     }
+    public void Quit() {
+        Invoke("QuitGame", 0.1f);
+    }
+    void QuitGame() {
+        Application.Quit();
+    }
 }
