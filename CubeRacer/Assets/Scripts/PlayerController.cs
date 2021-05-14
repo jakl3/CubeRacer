@@ -39,13 +39,7 @@ public class PlayerController : MonoBehaviour
 
             // rb.MovePosition (rb.position + new Vector3(0, 0, 30 * Time.fixedDeltaTime));
 
-            if (Input.GetKey("d")) {
-                rb.AddForce(sideForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
-            }
-
-            if (Input.GetKey("a")) {
-                rb.AddForce(-sideForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
-            }
+            rb.AddForce(Input.GetAxisRaw("Horizontal") * sideForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
         }
 
         if (rb.position.y < 0.9f) {
