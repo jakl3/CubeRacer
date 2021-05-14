@@ -42,8 +42,28 @@ public class StartGame : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
     }
 
-// 0 is easy, 1 is normal, 2 is hard
+    // 0 is easy, 1 is normal, 2 is hard
     // Difficulty Select
+    void Start() {
+        if (DATA.Difficulty == 0) {
+            text.text = "CURRENT: EASY";
+            Color c = new Color();
+            ColorUtility.TryParseHtmlString("#FDFF36", out c);
+            text.color = c;
+        }
+        else if (DATA.Difficulty == 1) {
+            text.text = "CURRENT: MEDIUM";
+            Color c = new Color();
+            ColorUtility.TryParseHtmlString("#9EFF17", out c);
+            text.color = c;
+        }
+        else if (DATA.Difficulty == 2) {
+            text.text = "CURRENT: HARD";
+            Color c = new Color();
+            ColorUtility.TryParseHtmlString("#FF5147", out c);
+            text.color = c;
+        }
+    }
     public void Easy() {
         DATA.Difficulty = 0;
         text.text = "CURRENT: EASY";

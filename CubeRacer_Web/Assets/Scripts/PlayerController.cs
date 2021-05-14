@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
         if (active) {
             // rotate
             Quaternion targetRotation = Quaternion.identity;
-            this.transform.rotation = Quaternion.Lerp(this.transform.rotation, targetRotation, Time.deltaTime * 10);
+            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * 15);
 
             // velocity
             if (rb.velocity.magnitude < speedLimit) {
